@@ -1,0 +1,1 @@
+This is just an example directory. I put my Guzzle stuff here as well as go though the repository in parallel to the Eloquent Repository. The way I'm using guzzle it's simple an access to a data store, just like MySQL, S3, Redis, etc.
