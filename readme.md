@@ -24,6 +24,8 @@ Some great video references
 * [Chris Fidao - Hexagonal Architecture](http://youtu.be/6SBjKOwVq0o)
 
 
+######Also see [Matt Stauffer's examples of using Laravel compoenents outside of Laravel.](https://github.com/mattstauffer/IlluminateNonLaravel)
+
 ## Bindings
 
 Bindings are used in the IoC container to link an interface to a specific usage of that interface. The advantage being, say you are using the transactional email service MailGun, but rather than hardcode that whereever it is used, you have an interface `Mail` and you bind the MailGun class to it `$this->ioc->bind('Mail', 'Acme\Service\Mail\Mailgun');` then in order to  use that service, you call Mail from the IoC container `$this->mail = $this->ioc->make('Mail');`. Then one day, you decide to use SendGrid instead, you simply create the service that uses the Mail interface, and in the binding, change it to `$this->ioc->bind('Mail', 'Acme\Service\Mail\Sendgrid');` and voilà! You are instantly using the new system everywhere you are using `Mail`.
